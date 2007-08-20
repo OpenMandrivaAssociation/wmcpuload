@@ -1,6 +1,6 @@
 %define	name	wmcpuload
 %define version 1.1.0pre4
-%define release 1mdk
+%define release %mkrel 1
 
 Summary: WindowMaker dock application that displays CPU usage
 Name:		%{name}
