@@ -45,11 +45,16 @@ convert icons/wmcpuload-32x32.xpm $RPM_BUILD_ROOT/%{_iconsdir}/%{name}.png
 convert icons/wmcpuload-48x48.xpm $RPM_BUILD_ROOT/%{_miconsdir}/%{name}.png
 
 
-install -m 755 -d %buildroot%{_menudir}
-cat << EOF > %buildroot%{_menudir}/%{name}
-?package(%{name}):command="%{_prefix}/bin/%{name}" icon="%{name}.png"\\
-                  needs="X11" section="Applications/Monitoring" \\
-                  title="WmCPULoad" longtitle="CPU monitoring in a dockapp"
+mkdir -p %{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%buildroot.desktop
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Exec=%{_prefix}/bin/%{name}"
+icon="%{name}.png\                  
+Categories=System;Monitor;                  
+Name=WmCPULoad
+Comment=CPU monitoring in a dockapp
 EOF
 
 
@@ -74,6 +79,6 @@ EOF
 %{_liconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
-%{_menudir}/%{name}
+%{_datadir}/applications/mandriva-%{name}.desktop
 %{_mandir}/man1/*
 
