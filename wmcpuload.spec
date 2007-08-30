@@ -51,7 +51,7 @@ cat << EOF > %buildroot%{_datadir}/applications/mandriva-%name.desktop
 Type=Application
 Exec=%{_prefix}/bin/%{name}"
 icon="%{name}.png\                  
-Categories=System;Monitor;                  
+Categories=System;Monitor;                  ;
 Name=WmCPULoad
 Comment=CPU monitoring in a dockapp
 EOF
