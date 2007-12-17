@@ -12,7 +12,6 @@ Source:		%name-%{version}.tar.bz2
 URL:		http://www.sh.rim.or.jp/~ssato/dockapp/index.shtml
 Requires:	X11-libs, xpm
 BuildRequires:	X11-devel, xpm-devel, ImageMagick
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
 A dockapp to monitor cpu load for WindowMaker. It works fine with AfterStep
