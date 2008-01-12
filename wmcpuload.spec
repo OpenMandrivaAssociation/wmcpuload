@@ -1,6 +1,6 @@
 %define	name	wmcpuload
 %define version 1.1.0pre4
-%define release %mkrel 3
+%define release %mkrel 4
 
 Summary: WindowMaker dock application that displays CPU usage
 Name:		%{name}
@@ -10,7 +10,6 @@ License:	GPL
 Group:		Graphical desktop/WindowMaker
 Source:		%name-%{version}.tar.bz2
 URL:		http://www.sh.rim.or.jp/~ssato/dockapp/index.shtml
-Requires:	X11-libs
 BuildRequires:	X11-devel, xpm-devel, ImageMagick
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 
