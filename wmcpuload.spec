@@ -10,7 +10,7 @@ License:	GPL
 Group:		Graphical desktop/WindowMaker
 Source:		%name-%{version}.tar.bz2
 URL:		http://www.sh.rim.or.jp/~ssato/dockapp/index.shtml
-BuildRequires:	X11-devel, xpm-devel, ImageMagick
+BuildRequires:	X11-devel, xpm-devel, imagemagick
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
