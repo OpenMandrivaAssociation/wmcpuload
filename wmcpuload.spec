@@ -1,6 +1,6 @@
 %define	name	wmcpuload
 %define version 1.1.0pre4
-%define release %mkrel 8
+%define release %mkrel 9
 
 Summary: WindowMaker dock application that displays CPU usage
 Name:		%{name}
@@ -10,7 +10,10 @@ License:	GPL
 Group:		Graphical desktop/WindowMaker
 Source:		%name-%{version}.tar.bz2
 URL:		http://www.sh.rim.or.jp/~ssato/dockapp/index.shtml
-BuildRequires:	X11-devel, xpm-devel, imagemagick
+BuildRequires:	libx11-devel
+BuildRequires:	libxpm-devel
+BuildRequires:	libxext-devel
+BuildRequires:	imagemagick
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
@@ -18,22 +21,15 @@ A dockapp to monitor cpu load for WindowMaker. It works fine with AfterStep
 and BlackBox and has SMP support.
 
 %prep
-
 %setup -q
-%configure --prefix %{_prefix}
 
 %build
+%configure2_5x
 %make
 
 %install
-%makeinstall
-#[ -d %buildroot ] && rm -rf %buildroot
-
-#install -m 755 -d %buildroot%prefix/bin
-#install -m 755 src/%name %buildroot%prefix/bin/
-
-#install -m 755 -d %buildroot%_mandir/man1
-#install -m 755 doc/%name.1 %buildroot%_mandir/man1/
+rm -fr %buildroot
+%makeinstall_std
 
 install -m 755 -d %buildroot%{_miconsdir}
 install -m 755 -d %buildroot%{_iconsdir}
@@ -48,9 +44,9 @@ mkdir -p %buildroot%{_datadir}/applications/
 cat << EOF > %buildroot%{_datadir}/applications/mandriva-%name.desktop
 [Desktop Entry]
 Type=Application
-Exec=%{_prefix}/bin/%{name}"
-icon="%{name}.png\                  
-Categories=System;Monitor;                  ;
+Exec=%{_bindir}/%{name}
+Icon=%{name}
+Categories=System;Monitor;
 Name=WmCPULoad
 Comment=CPU monitoring in a dockapp
 EOF
@@ -77,7 +73,7 @@ EOF
 %files
 %defattr (-,root,root)
 %doc AUTHORS INSTALL NEWS COPYING README ChangeLog TODO THANKS
-%{_prefix}/bin/*
+%{_bindir}/*
 %{_liconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
