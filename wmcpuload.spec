@@ -1,6 +1,6 @@
 %define	name	wmcpuload
 %define version 1.1.0pre4
-%define release %mkrel 9
+%define release  10
 
 Summary: WindowMaker dock application that displays CPU usage
 Name:		%{name}
@@ -14,7 +14,6 @@ BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xpm)
 BuildRequires:	pkgconfig(xext)
 BuildRequires:	imagemagick
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
 A dockapp to monitor cpu load for WindowMaker. It works fine with AfterStep
