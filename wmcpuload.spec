@@ -9,7 +9,7 @@ Release:	%{release}
 License:	GPL
 Group:		Graphical desktop/WindowMaker
 Source:		%name-%{version}.tar.bz2
-URL:		http://www.sh.rim.or.jp/~ssato/dockapp/index.shtml
+URL:		https://www.sh.rim.or.jp/~ssato/dockapp/index.shtml
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xpm)
 BuildRequires:	pkgconfig(xext)
