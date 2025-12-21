@@ -10,6 +10,11 @@ License:	GPL
 Group:		Graphical desktop/WindowMaker
 Source:		%name-%{version}.tar.bz2
 URL:		https://www.sh.rim.or.jp/~ssato/dockapp/index.shtml
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xpm)
 BuildRequires:	pkgconfig(xext)
